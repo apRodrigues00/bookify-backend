@@ -3,7 +3,6 @@ import express from "express";
 
 const route = express();
 
-// Listar todos os usuários
 route.get("/usuarios", async (req, res) => {
     try {
         const result = await pool.query("SELECT * FROM usuarios");
@@ -14,7 +13,6 @@ route.get("/usuarios", async (req, res) => {
     }
 });
 
-// Criar um usuário
 route.post("/usuarios", async (req, res) => {
     try {
         const { nome, email, telefone, genero_preferido } = req.body;
