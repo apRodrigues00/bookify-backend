@@ -2,6 +2,9 @@ import express from "express";
 import cors from "cors";
 import usersRoute from "./routes/users.js";
 import authRoute from "./routes/auth.js";
+import managementRoute from "./routes/management.js";
+import booksRoute from "./routes/books.js";
+import listsRoutes from "./routes/lists.js";
 
 const app = express();
 const port = 8080;
@@ -26,6 +29,9 @@ app.use(express.json());
 
 app.use('/', usersRoute);
 app.use('/', authRoute);
+app.use('/', managementRoute);
+app.use('/', booksRoute);
+app.use('/', listsRoutes);
 
 app.listen(port, () => {
     console.log(`🚀 Servidor rodando em http://localhost:${port}`);
